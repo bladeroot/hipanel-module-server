@@ -48,8 +48,8 @@ class HubActionsMenu extends \hiqdev\yii2\menus\Menu
                 ],
             ],
             'monitoring-settings' => [
-                'url' => ['monitoring-settings', 'id' => $this->model->id],
-                'icon' => 'fa-cogs',
+//                'url' => ['monitoring-settings', 'id' => $this->model->id],
+//                'icon' => 'fa-cogs',
                 'label' => AjaxModalWithTemplatedButton::widget([
                     'ajaxModalOptions' => [
                         'id' => "monitoring-settings-modal-{$this->model->id}",
@@ -60,7 +60,8 @@ class HubActionsMenu extends \hiqdev\yii2\menus\Menu
                         'handleSubmit' => ['monitoring-settings', 'id' => $this->model->id],
                         'toggleButton' => [
                             'tag' => 'a',
-                            'label' => Yii::t('hipanel:server', 'Monitoring properties'),
+                            'label' => Html::tag('i', null, ['class' => 'fa fa-fw fa-cogs']) . Yii::t('hipanel:server', 'Monitoring properties'),
+                            'icon' => 'fa-cogs',
                         ],
                     ],
                     'toggleButtonTemplate' => '{toggleButton}',
